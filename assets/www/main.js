@@ -17,6 +17,9 @@
        under the License.
 */
 
+
+
+
 var deviceInfo = function() {
     document.getElementById("platform").innerHTML = device.platform;
     document.getElementById("version").innerHTML = device.version;
@@ -149,7 +152,7 @@ function toggleCompass() {
         navigator.compass.clearWatch(watchID);
         watchID = null;
         updateHeading({ magneticHeading : "Off"});
-    } else {        
+    } else {
         var options = { frequency: 1000 };
         watchID = navigator.compass.watchHeading(updateHeading, function(e) {
             alert('Compass Error: ' + e.code);

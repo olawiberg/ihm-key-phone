@@ -20,23 +20,84 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+        <script type="text/javascript">
+            window.addEventListener('load', function() {
+                document.body.addEventListener('touchmove', function(e) {
+                    e.preventDefault();
+                }, false);
+            }, false);
+        </script>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Mobile auth</title>
+        <link href="master.css" media="screen" rel="stylesheet" type="text/css" />
+
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta content="lBU7YbXXnP7KOFtsv6Nv2fp0yfbE3wsUKOAmHxSQWgA=" name="csrf-token" />
+        <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+  </head>
+  <body class='mobile-auth-page'>
+    <div id="deviceready">
+    <div id='container'>
+      <div class='row'>
+        <div class='twelve columns'></div>
+      </div>
+      <div class='row'>
+        <div class='twelve columns'>
+          <div class='row mobile-auth-info-container'>
+            <div class='twelve columns'>
+              <h4>Enter the combination from the other device</h4>
             </div>
+          </div>
+          <form accept-charset="UTF-8" action="/" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="lBU7YbXXnP7KOFtsv6Nv2fp0yfbE3wsUKOAmHxSQWgA=" /></div>
+            <div class='row mobile-auth-touchpad-container'>
+              <div class='twelve columns'>
+                <div class='auth-touchpad'>
+                  <div class='row'>
+                    <div class='twelve-columns'>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='twelve-columns'>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='twelve-columns'>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                      <div class="auth-touchpad-dot"><div class="auth-touchpad-dot-outer-circle"><div class="auth-touchpad-dot-inner-circle"></div></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row mobile-auth-submit-container'>
+              <div class='twelve columns'>
+                <button class="button round" name="button" type="submit">Authenticate</button>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
+    </div>
         <script type="text/javascript" src="cordova-2.2.0.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/mobile_auth.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/application.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+            // MobileAuth.init()
         </script>
+    </div>
     </body>
 </html>
